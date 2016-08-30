@@ -1,0 +1,15 @@
+
+while(botao) { //espero o botao inicial
+	delay 10;
+	}
+	abaixa;
+	liga_ima;
+	levanta;
+	sobe;
+	while(botao){ //espero o botao quando a bandeira estiver levantada
+	delay 10;
+	}
+		print "CACIlDIS";
+		direita;
+		esquerda;
+		

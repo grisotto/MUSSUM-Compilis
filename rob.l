@@ -43,6 +43,18 @@ extern void unescape(char *s);
 "and"					{ return(TOK_AND); }
 "or"					{ return(TOK_OR); }
 
+"botao"					{ return(TOK_BOTAO);}
+"abaixa"				{ return(TOK_ABAIXA); }
+"liga_ima"				{ return(TOK_LIGA_IMA); }
+"levanta"				{ return(TOK_LEVANTA); }
+"sobe"				    { return(TOK_SOBE); }
+"direita"				{ return(TOK_DIREITA); }
+"esquerda"				{ return(TOK_ESQUERDA); }
+
+
+
+
+
 [a-zA-Z_][a-zA-Z0-9_]*	{ yylval.ident = strndup(yytext, yyleng); 
 						  return(TOK_IDENT); }
 

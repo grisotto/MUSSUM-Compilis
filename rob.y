@@ -1,6 +1,10 @@
 %{
 #include "node.h"
 
+Int16 *delaycompleto = new Int16(1500);
+Int16 *delaymeio = new Int16(750);
+Int16 *zero = new Int16(0);
+
 class Node;
 class Stmts;
 %}
@@ -8,7 +12,8 @@ class Stmts;
 %token TOK_IDENT TOK_IN TOK_OUT TOK_FLOAT TOK_INTEIRO TOK_PRINT TOK_DELAY 
 %token TOK_IF TOK_ELSE TOK_WHILE
 %token EQ_OP NE_OP LT_OP GT_OP LE_OP GE_OP TOK_AND TOK_OR
-%token TOK_STRING
+%token TOK_STRING TOK_ABAIXA TOK_LEVANTA TOK_SOBE TOK_DIREITA TOK_ESQUERDA TOK_LIGA_IMA
+%token TOK_BOTAO
 
 %union {
 	char *port;
@@ -48,7 +53,71 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 	 | condblock						{ $$ = new Capsule($1); }
 	 | whileblock						{ $$ = new Capsule($1); }
 	 | printstmt ';'						{ $$ = $1; }
-	 ;
+	 | TOK_ABAIXA ';'					{
+		 									Int16 *abaixa = new Int16(10);
+		 								    
+		 									Stmts *comms = new Stmts(new OutPort("3", abaixa));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("3", zero));
+											comms->append(new Delay(delaycompleto));
+
+											$$ = comms;
+		 								}
+
+	 | TOK_LEVANTA	';'					{
+
+		 									Int16 *alto = new Int16(10);
+
+		 									  
+		 									Stmts *comms = new Stmts(new OutPort("3", alto));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("3", zero));
+											comms->append(new Delay(delaycompleto));
+
+											$$ = comms;
+		 								}
+	 | TOK_SOBE	 ';'					{
+	 										Int16 *levanta = new Int16(10);
+	 										  
+		 									Stmts *comms = new Stmts(new OutPort("4", levanta));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("4", zero));
+											comms->append(new Delay(delaycompleto));
+
+											$$ = comms;
+	 									}
+	 | TOK_DIREITA	';'					{
+	 										Int16 *direita = new Int16(100);
+	 										  
+		 									Stmts *comms = new Stmts(new OutPort("1", direita));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("1", zero));
+											comms->append(new Delay(delaycompleto));
+
+											$$ = comms;
+	 									}
+	 | TOK_ESQUERDA	';'					{
+	 										Int16 *esquerda = new Int16(100);
+	 										  
+		 									Stmts *comms = new Stmts(new OutPort("1", esquerda));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("1", zero));
+											comms->append(new Delay(delaycompleto));
+
+											$$ = comms;
+	 									}
+
+	 | TOK_LIGA_IMA	';' 				{
+	 										Int16 *liga = new Int16(255);
+	 										  
+		 									Stmts *comms = new Stmts(new OutPort("5", liga));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("5", zero));
+											comms->append(new Delay(delaycompleto));
+
+											$$ = comms;
+	 									}
+	 
 
 condblock : TOK_IF '(' logicexpr ')' stmt %prec IFX				{ $$ = new If($3, $5, NULL); }
 		  | TOK_IF '(' logicexpr ')' stmt elseblock				{ $$ = new If($3, $5, $6); }
@@ -78,6 +147,19 @@ logicfactor : '(' logicexpr ')'		{ $$ = new Capsule($2); }
 			| expr GE_OP expr		{ $$ = new CmpOp($1, GE_OP, $3); }
 			| expr LT_OP expr		{ $$ = new CmpOp($1, LT_OP, $3); }
 			| expr GT_OP expr		{ $$ = new CmpOp($1, GT_OP, $3); }
+			| TOK_BOTAO 						{
+	 										
+	 										CmpOp* apertou = new CmpOp(new InPort("2"), EQ_OP, new Int16(0));
+
+	 										//Int16 *delaydefault = new Int16(10);
+
+		//									Stmts *comms = new Stmts(new Delay(delaydefault));
+		
+		//									While *w = new While(apertou, comms);
+											$$ = apertou;
+
+	 										
+	 									}
 			;
 
 expr : expr '+' term			{ $$ = new BinaryOp($1, '+', $3); }
