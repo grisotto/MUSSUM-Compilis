@@ -85,11 +85,9 @@ extern int yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-<<<<<<< HEAD
 
-=======
 typedef union YYSTYPE YYSTYPE;
->>>>>>> 8dbcd84de84ba227e525e384eb4e2b252808cef8
+
 union YYSTYPE
 {
 #line 18 "rob.y" /* yacc.c:1909  */

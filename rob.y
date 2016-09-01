@@ -55,16 +55,11 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 	 | printstmt ';'						{ $$ = $1; }
 	 | TOK_ABAIXA ';'					{
 		 									Int16 *abaixa = new Int16(10);
-<<<<<<< HEAD
-		 								    
-		 									Stmts *comms = new Stmts(new OutPort("3", abaixa));
-=======
 
 		 								    	
 
 		 									Stmts *comms = new Stmts(new OutPort("3", abaixa));
 											comms->append(new OutPort("2", zero));
->>>>>>> 8dbcd84de84ba227e525e384eb4e2b252808cef8
 											comms->append(new Delay(delaycompleto));
 											comms->append(new OutPort("3", zero));
 											comms->append(new Delay(delaycompleto));

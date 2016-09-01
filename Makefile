@@ -14,10 +14,8 @@ LEXS=$(patsubst %.l,%_l.o,$(wildcard *.l))
 
 all: $(COMPILER_NAME)
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8dbcd84de84ba227e525e384eb4e2b252808cef8
+
 %_l.cpp: %.l
 	lex -o $@ $<
 
@@ -30,15 +28,11 @@ $(COMPILER_NAME): ${YACS} ${LEXS} ${CPPS}
 %.o: %.cpp node.h
 	${CC} ${LLVMFLAGS} ${FLAGS} ${DFLAGS} -c $< -o $@
 
-<<<<<<< HEAD
-clean:
-	rm -f *_y.cpp *_l.cpp bison.hpp *.o
-=======
+
 
 clean:
 	rm -f *_y.cpp *_l.cpp bison.hpp *.o
-	llc-3.8 medalha.ll -o medalha.o -filetype=obj
->>>>>>> 8dbcd84de84ba227e525e384eb4e2b252808cef8
+
 
 .SILENT:
 
