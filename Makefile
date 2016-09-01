@@ -18,6 +18,7 @@ all: $(COMPILER_NAME)
 
 %_l.cpp: %.l
 	lex -o $@ $<
+	
 
 %_y.cpp: %.y
 	bison --defines=bison.hpp -o $@ $<
