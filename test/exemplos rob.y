@@ -43,7 +43,7 @@ exemplos rob.y
 
 $: make
 $: ./robcmp medalha.txt > medalha.ll
-$: llc-3.8 medalha.ll medalha.o -filetype=obj
+$: llc-3.8 medalha.ll -o medalha.o -filetype=obj
 $: clang -c /debug.c
 $: clang medalha.o debug.o -o medalha -lncurses﻿
 
