@@ -1,0 +1,31 @@
+
+<<<<<<< HEAD
+while(botao) { //espero o botao inicial
+	delay 10;
+	}
+	abaixa;
+	liga_ima;
+	levanta;
+	sobe;
+	while(botao){ //espero o botao quando a bandeira estiver levantada
+	delay 10;
+	}
+		print "CACIlDIS";
+		direita;
+		esquerda;
+=======
+while(botao) { //espero o botao inicial motor 2 != 0
+	delay 10;
+	}
+	abaixa; 	// o motor 3 = 10 - abaixa
+	liga_ima; 	// o motor 5 = 255 - liga ima
+	levanta;	// o motor 3 = 10 - levanta
+	sobe;		// o motor 4 = 10 - sobe
+	while(botao){ //espero o botao quando a bandeira estiver levantada
+		delay 10;
+	}
+	print "CACIlDIS";
+	direita; 	//o motor 1 = 100 - direita
+	esquerda;	//o motor 1 = -100 ?? esquerda
+>>>>>>> 8dbcd84de84ba227e525e384eb4e2b252808cef8
+		
