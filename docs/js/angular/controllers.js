@@ -9,7 +9,7 @@ app.config(['$compileProvider', function ($compileProvider) {
 
 app.controller("birlCtrl", function($scope, $window, birlService) {
     $scope.disabled = false;
-    $scope.btText = "Bora!";
+    $scope.btText = "Cacildiss!";
     $scope.stdin = "";
     $scope.stdout = "";
     $scope.code = "HORA DO SHOW\n    CE QUER VER ESSA PORRA? (\"Hello, World! Porra!\\n\");\n    BORA CUMPADE 0;\nBIRL";
@@ -31,7 +31,7 @@ app.controller("birlCtrl", function($scope, $window, birlService) {
             $scope.temErro = true;
         }).finally(function(){
             $scope.disabled = false;
-            $scope.btText = "Bora!";
+            $scope.btText = "Cacildiss!";
         });
     }
 
