@@ -755,7 +755,7 @@ body {
 p.text-center {
     font-size: 22px;
 padding-top: 10px;
-color: #999;
+color: #999!important;
 }
 
 p.text-center.birl-text{
