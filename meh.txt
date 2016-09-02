@@ -1,0 +1,16 @@
+
+forevis(suco_de_cevadiss) { //espero o botao inicial motor 2 != 0
+	mundo_vai_girarzis 10;
+	}
+	tombis_que_eu_levo; 	// o motor 3 = 10 - abaixa
+	quebra_um_gais; 	// o motor 5 = 255 - liga ima
+	negadis_hoje_e_sexta_feris;	// o motor 3 = 10 - levanta
+	pe_sem_cair;		// o motor 4 = 10 - sobe
+	forevis(suco_de_cevadiss){ //espero o botao quando a bandeira estiver levantada
+		mundo_vai_girarzis 10;
+	}
+	//discrevis "CACIlDIS";
+	pra_la; 	//o motor 1 = 100 - direita
+	pra_ca;	//o motor 1 = -100 ?? esquerda
+
+		

@@ -5,6 +5,8 @@ Int16 *delaycompleto = new Int16(1500);
 Int16 *delaymeio = new Int16(750);
 Int16 *zero = new Int16(0);
 
+Int16 *alto = new Int16(0);
+
 class Node;
 class Stmts;
 %}
@@ -13,7 +15,7 @@ class Stmts;
 %token TOK_IF TOK_ELSE TOK_WHILE
 %token EQ_OP NE_OP LT_OP GT_OP LE_OP GE_OP TOK_AND TOK_OR
 %token TOK_STRING TOK_ABAIXA TOK_LEVANTA TOK_SOBE TOK_DIREITA TOK_ESQUERDA TOK_LIGA_IMA
-%token TOK_BOTAO
+%token TOK_BOTAO TOK_MEH
 
 %union {
 	char *port;
@@ -53,13 +55,26 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 	 | condblock						{ $$ = new Capsule($1); }
 	 | whileblock						{ $$ = new Capsule($1); }
 	 | printstmt ';'						{ $$ = $1; }
-	 | TOK_ABAIXA ';'					{
-		 									Int16 *abaixa = new Int16(10);
+	 | TOK_MEH ';'						{
+		 									
 
 		 								    	
 
-		 									Stmts *comms = new Stmts(new OutPort("3", abaixa));
-											comms->append(new OutPort("2", zero));
+		 									Stmts *comms = new Stmts(new OutPort("3", alto));
+										//	comms->append(new OutPort("2", zero));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("3", zero));
+											comms->append(new Delay(delaycompleto));
+
+											$$ = comms;
+		 								}
+	 | TOK_ABAIXA ';'					{
+		 									
+
+		 								    	
+
+		 									Stmts *comms = new Stmts(new OutPort("3", alto));
+										//	comms->append(new OutPort("2", zero));
 											comms->append(new Delay(delaycompleto));
 											comms->append(new OutPort("3", zero));
 											comms->append(new Delay(delaycompleto));
@@ -69,7 +84,7 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 
 	 | TOK_LEVANTA	';'					{
 
-		 									Int16 *alto = new Int16(10);
+		 								
 
 		 									  
 		 									Stmts *comms = new Stmts(new OutPort("3", alto));
@@ -80,9 +95,9 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 											$$ = comms;
 		 								}
 	 | TOK_SOBE	 ';'					{
-	 										Int16 *levanta = new Int16(10);
+	 										
 	 										  
-		 									Stmts *comms = new Stmts(new OutPort("4", levanta));
+		 									Stmts *comms = new Stmts(new OutPort("4", alto));
 											comms->append(new Delay(delaycompleto));
 											comms->append(new OutPort("4", zero));
 											comms->append(new Delay(delaycompleto));
@@ -90,9 +105,9 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 											$$ = comms;
 	 									}
 	 | TOK_DIREITA	';'					{
-	 										Int16 *direita = new Int16(100);
+	 										
 	 										  
-		 									Stmts *comms = new Stmts(new OutPort("1", direita));
+		 									Stmts *comms = new Stmts(new OutPort("1", alto));
 											comms->append(new Delay(delaycompleto));
 											comms->append(new OutPort("1", zero));
 											comms->append(new Delay(delaycompleto));
@@ -100,9 +115,9 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 											$$ = comms;
 	 									}
 	 | TOK_ESQUERDA	';'					{
-	 										Int16 *esquerda = new Int16(100);
+	 										
 	 										  
-		 									Stmts *comms = new Stmts(new OutPort("1", esquerda));
+		 									Stmts *comms = new Stmts(new OutPort("1", alto));
 											comms->append(new Delay(delaycompleto));
 											comms->append(new OutPort("1", zero));
 											comms->append(new Delay(delaycompleto));
@@ -111,11 +126,11 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 	 									}
 
 	 | TOK_LIGA_IMA	';' 				{
-	 										Int16 *liga = new Int16(255);
+	 										
 	 										  
-		 									Stmts *comms = new Stmts(new OutPort("5", liga));
+		 									Stmts *comms = new Stmts(new OutPort("19", alto));
 											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("5", zero));
+											comms->append(new OutPort("19", zero));
 											comms->append(new Delay(delaycompleto));
 
 											$$ = comms;

@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.0.2.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
 /* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -71,16 +71,17 @@ extern int yydebug;
     TOK_ESQUERDA = 281,
     TOK_LIGA_IMA = 282,
     TOK_BOTAO = 283,
-    IFX = 284
+    TOK_MEH = 284,
+    IFX = 285
   };
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE YYSTYPE;
+
 union YYSTYPE
 {
-#line 18 "rob.y" /* yacc.c:1909  */
+#line 20 "rob.y" /* yacc.c:1909  */
 
 	char *port;
 	char *ident;
@@ -90,8 +91,10 @@ union YYSTYPE
 	Node *node;
 	Stmts *stmt;
 
-#line 94 "bison.hpp" /* yacc.c:1909  */
+#line 95 "bison.hpp" /* yacc.c:1909  */
 };
+
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

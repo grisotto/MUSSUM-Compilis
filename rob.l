@@ -20,22 +20,22 @@ extern void unescape(char *s);
 
 "//".*$					{ fprintf(stderr, "Comentario: %s\n", yytext); /* comentario de linha */}
 
-"print"					{ return(TOK_PRINT); }
+"discrevis"					{ return(TOK_PRINT); }
 
-"in"[0-9]+				{ yylval.port = strndup(yytext+2, yyleng-2);
+"incasis"[0-9]+				{ yylval.port = strndup(yytext+2, yyleng-2);
 						  return(TOK_IN);
 						}
 
-"out"[0-9]+				{ yylval.port = strndup(yytext+3, yyleng-3);
+"macumbis"[0-9]+				{ yylval.port = strndup(yytext+3, yyleng-3);
 						  return(TOK_OUT);
 						}
 
-"delay"					{ return(TOK_DELAY); }
-"if"					{ return(TOK_IF); }
-"else"					{ return(TOK_ELSE); }
-"while"					{ return(TOK_WHILE); }
-"=="					{ return(EQ_OP); }
-"!="					{ return(NE_OP); }
+"mundo_vai_girarzis"					{ return(TOK_DELAY); }
+"que_isso_rapa"					{ return(TOK_IF); }
+"que_azari_e_agora"					{ return(TOK_ELSE); }
+"forevis"					{ return(TOK_WHILE); }
+"a_ordem_dos_tratores_nao_altera_o_pao_duris"					{ return(EQ_OP); }
+"sarava"					{ return(NE_OP); }
 "<="					{ return(LE_OP); }
 ">="					{ return(GE_OP); }
 ">"						{ return(GT_OP); }
@@ -43,13 +43,14 @@ extern void unescape(char *s);
 "and"					{ return(TOK_AND); }
 "or"					{ return(TOK_OR); }
 
-"botao"					{ return(TOK_BOTAO);}
-"abaixa"				{ return(TOK_ABAIXA); }
-"liga_ima"				{ return(TOK_LIGA_IMA); }
-"levanta"				{ return(TOK_LEVANTA); }
-"sobe"				    { return(TOK_SOBE); }
-"direita"				{ return(TOK_DIREITA); }
-"esquerda"				{ return(TOK_ESQUERDA); }
+"suco_de_cevadiss"					{ return(TOK_BOTAO);}
+"tombis_que_eu_levo"				{ return(TOK_ABAIXA); }
+"quebra_um_gais"				{ return(TOK_LIGA_IMA); }
+"negadis_hoje_e_sexta_feris"				{ return(TOK_LEVANTA); }
+"pe_sem_cair"				    { return(TOK_SOBE); }
+"pra_la"				{ return(TOK_DIREITA); }
+"pra_ca"				{ return(TOK_ESQUERDA); }
+"mais_meh"				{ return(TOK_MEH); }
 
 
 
@@ -64,15 +65,15 @@ extern void unescape(char *s);
 "{"						{ return('{'); }
 "}"						{ return('}'); }
 
--?[0-9]+\.[0-9]+		{ yylval.nfloat = atof(yytext); 
+"ampola_do_diuretico"-?[0-9]+\.[0-9]+		{ yylval.nfloat = atof(yytext); 
 						  return(TOK_FLOAT); }
 
--?[0-9]+				{ yylval.nint = atoi(yytext);
+"preto_inteiris "-?[0-9]+				{ yylval.nint = atoi(yytext);
 						  return(TOK_INTEIRO); }
 
 "*"						{ return('*'); }
 "/"						{ return('/'); }
-"+"						{ return('+'); }
+"soma_na_contis"						{ return('+'); }
 "-"						{ return('-'); }
 "="						{ return('='); }
 ";"						{ return(';'); }
