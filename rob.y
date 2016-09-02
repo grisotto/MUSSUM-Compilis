@@ -1,11 +1,11 @@
 %{
 #include "node.h"
 
-Int16 *delaycompleto = new Int16(1500);
-Int16 *delaymeio = new Int16(750);
+Int16 *delaycompleto = new Int16(1000);
+Int16 *delaymeio = new Int16(500);
 Int16 *zero = new Int16(0);
 
-Int16 *alto = new Int16(0);
+Int16 *alto = new Int16(255);
 
 class Node;
 class Stmts;
@@ -51,7 +51,7 @@ stmts : stmts stmt			{ $$->append($2); }
 
 stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); } 
 	 | TOK_IDENT '=' expr ';'			{ $$ = new Variable($1, $3); }
-	 | TOK_DELAY expr';'					{ $$ = new Delay($2); }
+	 | TOK_DELAY expr ';'					{ $$ = new Delay($2); }
 	 | condblock						{ $$ = new Capsule($1); }
 	 | whileblock						{ $$ = new Capsule($1); }
 	 | printstmt ';'						{ $$ = $1; }
@@ -60,24 +60,34 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 
 		 								    	
 
-		 									Stmts *comms = new Stmts(new OutPort("3", alto));
-										//	comms->append(new OutPort("2", zero));
+		 									Stmts *comms = new Stmts(new OutPort("12", alto));
 											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("3", zero));
+											comms->append(new OutPort("12", zero));
+											comms->append(new OutPort("11", alto));
 											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("12", zero));
+
+											comms->append(new OutPort("11", alto));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("11", zero));
+											comms->append(new OutPort("12", alto));
+											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("12", zero));
+
 
 											$$ = comms;
 		 								}
-	 | TOK_ABAIXA ';'					{
+	 | TOK_ABAIXA expr ';'					{
 		 									
 
 		 								    	
-
-		 									Stmts *comms = new Stmts(new OutPort("3", alto));
+	 										BinaryOp *var = new  BinaryOp($2, '+', delaycompleto);
+		 									Stmts *comms = new Stmts(new OutPort("7", alto));
 										//	comms->append(new OutPort("2", zero));
-											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("3", zero));
-											comms->append(new Delay(delaycompleto));
+
+											comms->append(new Delay(var));
+											comms->append(new OutPort("7", zero));
+											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 		 								}
@@ -87,40 +97,40 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 		 								
 
 		 									  
-		 									Stmts *comms = new Stmts(new OutPort("3", alto));
+		 									Stmts *comms = new Stmts(new OutPort("8", alto));
 											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("3", zero));
-											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("8", zero));
+											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 		 								}
 	 | TOK_SOBE	 ';'					{
 	 										
 	 										  
-		 									Stmts *comms = new Stmts(new OutPort("4", alto));
+		 									Stmts *comms = new Stmts(new OutPort("9", alto));
 											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("4", zero));
-											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("9", zero));
+											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 	 									}
 	 | TOK_DIREITA	';'					{
 	 										
 	 										  
-		 									Stmts *comms = new Stmts(new OutPort("1", alto));
+		 									Stmts *comms = new Stmts(new OutPort("11", alto));
 											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("1", zero));
-											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("11", zero));
+											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 	 									}
 	 | TOK_ESQUERDA	';'					{
 	 										
 	 										  
-		 									Stmts *comms = new Stmts(new OutPort("1", alto));
+		 									Stmts *comms = new Stmts(new OutPort("12", alto));
 											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("1", zero));
-											comms->append(new Delay(delaycompleto));
+											comms->append(new OutPort("12", zero));
+											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 	 									}
@@ -131,7 +141,7 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 		 									Stmts *comms = new Stmts(new OutPort("19", alto));
 											comms->append(new Delay(delaycompleto));
 											comms->append(new OutPort("19", zero));
-											comms->append(new Delay(delaycompleto));
+											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 	 									}
