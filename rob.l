@@ -68,7 +68,7 @@ extern void unescape(char *s);
 "ampola_do_diuretico"-?[0-9]+\.[0-9]+		{ yylval.nfloat = atof(yytext); 
 						  return(TOK_FLOAT); }
 
-"preto_inteiris "-?[0-9]+				{ yylval.nint = atoi(yytext);
+"preto_inteiris "-?[0-9]+		 {yylval.nint = atoi(yytext+15);		
 						  return(TOK_INTEIRO); }
 
 "*"						{ return('*'); }

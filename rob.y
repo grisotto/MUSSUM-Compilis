@@ -80,56 +80,58 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 	 | TOK_ABAIXA expr ';'					{
 		 									
 
-		 								    	
-	 										BinaryOp *var = new  BinaryOp($2, '+', delaycompleto);
-		 									Stmts *comms = new Stmts(new OutPort("7", alto));
+		 								   // Variable *vartempo = new  Variable("var" ,$2);	
+		 								    //Load *loadvar = new Load("var");
+
+	 										BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);
+		 									Stmts *comms = new Stmts(new OutPort("6", alto));
 										//	comms->append(new OutPort("2", zero));
 
-											comms->append(new Delay(var));
+											comms->append(new Delay(vara));
+											comms->append(new OutPort("6", zero));
+											comms->append(new Delay(delaymeio));
+
+											$$ = comms;
+		 								}
+
+	 | TOK_LEVANTA	expr ';'					{
+
+		 								
+
+		 									BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);  
+		 									Stmts *comms = new Stmts(new OutPort("7", alto));
+											comms->append(new Delay(vara));
 											comms->append(new OutPort("7", zero));
 											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 		 								}
-
-	 | TOK_LEVANTA	';'					{
-
-		 								
-
-		 									  
-		 									Stmts *comms = new Stmts(new OutPort("8", alto));
-											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("8", zero));
-											comms->append(new Delay(delaymeio));
-
-											$$ = comms;
-		 								}
-	 | TOK_SOBE	 ';'					{
+	 | TOK_SOBE	 expr ';'					{
 	 										
-	 										  
+	 										BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);    
 		 									Stmts *comms = new Stmts(new OutPort("9", alto));
-											comms->append(new Delay(delaycompleto));
+											comms->append(new Delay(vara));
 											comms->append(new OutPort("9", zero));
 											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 	 									}
-	 | TOK_DIREITA	';'					{
+	 | TOK_DIREITA expr	';'					{
 	 										
-	 										  
-		 									Stmts *comms = new Stmts(new OutPort("11", alto));
-											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("11", zero));
+	 										BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);    
+		 									Stmts *comms = new Stmts(new OutPort("2", alto));
+											comms->append(new Delay(vara));
+											comms->append(new OutPort("2", zero));
 											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
 	 									}
-	 | TOK_ESQUERDA	';'					{
+	 | TOK_ESQUERDA	 expr';'					{
 	 										
-	 										  
-		 									Stmts *comms = new Stmts(new OutPort("12", alto));
-											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("12", zero));
+	 										BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);    
+		 									Stmts *comms = new Stmts(new OutPort("3", alto));
+											comms->append(new Delay(vara));
+											comms->append(new OutPort("3", zero));
 											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
