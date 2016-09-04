@@ -64,7 +64,7 @@ var birlHighlightRules = function() {
 
     var keywordOperators = (
         // "FRANGO|MONSTRINHO|MONSTRO|MONSTRAO|TRAPEZIO|TRAPEZIO DESCENDENTE|BICEPS"
-        "preto_inteiris|ampola_do_diuretico|cacildis|encasapa o lance"
+        "preto_inteiris|ampola_do_diuretico|cacildis"
         
     );
 
@@ -75,8 +75,8 @@ var birlHighlightRules = function() {
     // var bambamRegex = "(?:\\s*|)(?:AJUDA O MALUCO TA DOENTE|BIRL|HORA DO SHOW|BORA CUMPADE|ELE QUE A GENTE QUER\\?|"+
     // "NAO VAI DAR NAO|OH O HOME AI PO|NEGATIVA BAMBAM|MAIS QUERO MAIS|QUE NAO VAI DAR O QUE\\?|SAI FILHO DA PUTA|VAMO MONSTRO)";
     // 
-    var bambamRegex = "(?:\\s*|)(?:que_isso_rapa\\?|"+
-    "que_azari_e_agora|forevis|a ordem dos tratores nao altera o pao duris|sarava|mundo_vai_girarzis preto_inteiris|SAI FILHO DA PUTA|VAMO MONSTRO)";
+    var bambamRegex = "(?:\\s*|)(?:suco_de_cevadiss|tombis_que_eu_levo|encasapa o lance|negadis_hoje_e_sexta_feris|pra_la|pra_ca|mais_meh|que_isso_rapa\\?|"+
+    "que_azari_e_agora|forevis|a ordem dos tratores nao altera o pao duris|sarava|mundo_vai_girarzis|soma_na_contis|VAMO MONSTRO)";
      var printsBambam = "\\s*(?:discrevis|oia_aqui_oh)";
     // var printsBambam = "\\s*(?:CE QUER VER ESSA PORRA\\?|QUE QUE CE QUER MONSTRAO\\?)";
 

@@ -12,8 +12,12 @@ app.controller("birlCtrl", function($scope, $window, birlService) {
     $scope.btText = "Cacildiss!";
     $scope.stdin = "";
     $scope.stdout = "";
-    $scope.code = "HORA DO SHOW\n    CE QUER VER ESSA PORRA? (\"Hello, World! Porra!\\n\");\n    BORA CUMPADE 0;\nBIRL";
+    $scope.code = "encasapa o lance\n    forevis (preto_inteiris 1)\{ \n \t\tleite; \n\t\t oia_aqui_oh (\"\%\s\", \&leite);\n "+
+    " \t\tque_isso_rapa? (leite sarava \"meh\" ) \n"+
+     "    \t\t\tmais_meh;\n \ \t} \ncacildis";
     $scope.temErro = false;
+
+    // Tem leite de morcego? Não? Deus é testemunha de que eu queria leite, então bota uma pinga aí!
 
     $scope.sendBirl = function(){
         $scope.disabled = true;
@@ -24,9 +28,9 @@ app.controller("birlCtrl", function($scope, $window, birlService) {
             $scope.stdout = data;
         }, function(error){
             if(error == "server-error") {
-                $scope.stdout = "NÃO VAI DAR NÃO, SERVIDOR CAIU";
+                $scope.stdout = "AZULÃO NÃO, SAI DAQUE GALEGUS";
             } else {
-                $scope.stdout = "ERRO DE COMPILAÇÃO CUMPADE";
+                $scope.stdout = "ERRIS O COMPILIS CUMPADI";
             }
             $scope.temErro = true;
         }).finally(function(){
