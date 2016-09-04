@@ -63,17 +63,22 @@ var birlHighlightRules = function() {
     );
 
     var keywordOperators = (
-        "FRANGO|MONSTRINHO|MONSTRO|MONSTRAO|TRAPEZIO|TRAPEZIO DESCENDENTE|BICEPS"
+        // "FRANGO|MONSTRINHO|MONSTRO|MONSTRAO|TRAPEZIO|TRAPEZIO DESCENDENTE|BICEPS"
+        "preto_inteiris|ampola_do_diuretico|cacildis|encasapa o lance"
+        
     );
 
     var builtinConstants = (
         "NULL|true|false|TRUE|FALSE|nullptr"
     );
     
-    var bambamRegex = "(?:\\s*|)(?:AJUDA O MALUCO TA DOENTE|BIRL|HORA DO SHOW|BORA CUMPADE|ELE QUE A GENTE QUER\\?|"+
-    "NAO VAI DAR NAO|OH O HOME AI PO|NEGATIVA BAMBAM|MAIS QUERO MAIS|QUE NAO VAI DAR O QUE\\?|SAI FILHO DA PUTA|VAMO MONSTRO)";
-    
-    var printsBambam = "\\s*(?:CE QUER VER ESSA PORRA\\?|QUE QUE CE QUER MONSTRAO\\?)";
+    // var bambamRegex = "(?:\\s*|)(?:AJUDA O MALUCO TA DOENTE|BIRL|HORA DO SHOW|BORA CUMPADE|ELE QUE A GENTE QUER\\?|"+
+    // "NAO VAI DAR NAO|OH O HOME AI PO|NEGATIVA BAMBAM|MAIS QUERO MAIS|QUE NAO VAI DAR O QUE\\?|SAI FILHO DA PUTA|VAMO MONSTRO)";
+    // 
+    var bambamRegex = "(?:\\s*|)(?:que_isso_rapa\\?|"+
+    "que_azari_e_agora|forevis|a ordem dos tratores nao altera o pao duris|sarava|mundo_vai_girarzis preto_inteiris|SAI FILHO DA PUTA|VAMO MONSTRO)";
+     var printsBambam = "\\s*(?:discrevis|oia_aqui_oh)";
+    // var printsBambam = "\\s*(?:CE QUER VER ESSA PORRA\\?|QUE QUE CE QUER MONSTRAO\\?)";
 
     var keywordMapper = this.$keywords = this.createKeywordMapper({
         "keyword.control" : keywordControls,
