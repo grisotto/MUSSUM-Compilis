@@ -34,6 +34,14 @@ $(COMPILER_NAME): ${YACS} ${LEXS} ${CPPS}
 clean:
 	rm -f *_y.cpp *_l.cpp bison.hpp *.o
 
+meh: clean all
+	clear
+	./robcmp meh.txt > meh.ll
+	llc-3.8 meh.ll -o meh.o -filetype=obj
+	clang -c debug.c
+	clang meh.o debug.o -o meh -lncurses
+	./meh
+
 
 .SILENT:
 
