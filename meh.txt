@@ -15,11 +15,11 @@ forevis (suco_de_cevadiss) {
 	}
 	//discrevis "CACIlDIS";
 
-	calcildis = preto_inteiris 0;
-	forevis (calcildis a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 3){
+	cacildis = preto_inteiris 0;
+	forevis (cacildis a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 3){
 	pra_la vartemp; 				//o motor 1 = 255 - direita
 	pra_ca vartemp;				//o motor 1 = 255 ?? esquerda
-	cacildis  = cacildis  + preto_inteiris 1;
+	cacildis  = cacildis  soma_na_contis preto_inteiris 1;
 	}
 
 	//mais_meh;
