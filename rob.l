@@ -31,27 +31,27 @@ extern void unescape(char *s);
 						}
 
 "mundo_vai_girarzis"					{ return(TOK_DELAY); }
-"que_isso_rapa"					{ return(TOK_IF); }
-"que_azari_e_agora"					{ return(TOK_ELSE); }
-"forevis"					{ return(TOK_WHILE); }
+"que_isso_rapa"							{ return(TOK_IF); }
+"que_azari_e_agora"						{ return(TOK_ELSE); }
+"forevis"								{ return(TOK_WHILE); }
 "a_ordem_dos_tratores_nao_altera_o_pao_duris"					{ return(EQ_OP); }
-"sarava"					{ return(NE_OP); }
-"<="					{ return(LE_OP); }
-">="					{ return(GE_OP); }
-">"						{ return(GT_OP); }
-"<"						{ return(LT_OP); }
-"and"					{ return(TOK_AND); }
-"or"					{ return(TOK_OR); }
+"sarava"									{ return(NE_OP); }
+"<="							{ return(LE_OP); }
+">="						{ return(GE_OP); }
+">"							{ return(GT_OP); }
+"<"							{ return(LT_OP); }
+"and"						{ return(TOK_AND); }
+"or"						{ return(TOK_OR); }
 
 "suco_de_cevadiss"					{ return(TOK_BOTAO);}
 "tombis_que_eu_levo"				{ return(TOK_ABAIXA); }
-"quebra_um_gais"				{ return(TOK_LIGA_IMA); }
-"negadis_hoje_e_sexta_feris"				{ return(TOK_LEVANTA); }
-"pe_sem_cair"				    { return(TOK_SOBE); }
-"pra_la"				{ return(TOK_DIREITA); }
-"pra_ca"				{ return(TOK_ESQUERDA); }
-"mais_meh"				{ return(TOK_MEH); }
-
+"quebra_um_gais"					{ return(TOK_LIGA_IMA); }
+"negadis_hoje_e_sexta_feris"		{ return(TOK_LEVANTA); }
+"pe_sem_cair"				   		 { return(TOK_SOBE); }
+"pra_la"							{ return(TOK_DIREITA); }
+"pra_ca"							{ return(TOK_ESQUERDA); }
+"mais_meh"							{ return(TOK_MEH); }
+	
 
 
 

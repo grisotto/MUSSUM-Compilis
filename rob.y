@@ -110,7 +110,7 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 	 										
 	 										BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);    
 		 									Stmts *comms = new Stmts(new OutPort("9", alto));
-											comms->append(new Delay(varax));
+											comms->append(new Delay(vara));
 											comms->append(new OutPort("9", zero));
 											comms->append(new Delay(delaymeio));
 
