@@ -16,7 +16,7 @@ forevis (suco_de_cevadiss) {
 	negadis_hoje_e_sexta_feris vartempMaior;			// o motor 7 = 255 - levanta
 	pe_sem_cair vartempMaior;					// o motor 9 = 255 - sobe
 
-	forevis(suco_de_cevadiss){ 		//espero o botao quando a figura esta no botao
+	forevis(suco_de_cevadiss){ 					//espero o botao quando a figura esta no botao
 		mundo_vai_girarzis preto_inteiris 10;
 	}
 	//discrevis "CACIlDIS";

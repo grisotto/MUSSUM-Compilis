@@ -124,7 +124,7 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 		 									BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);  
 		 									Stmts *comms = new Stmts(new OutPort("4", alto));
 											comms->append(new Delay(vara));
-											comms->append(new OutPort("7", zero));
+											comms->append(new OutPort("4", zero));
 											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
@@ -134,7 +134,7 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 	 										BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);    
 		 									Stmts *comms = new Stmts(new OutPort("5", alto));
 											comms->append(new Delay(vara));
-											comms->append(new OutPort("9", zero));
+											comms->append(new OutPort("5", zero));
 											comms->append(new Delay(delaymeio));
 
 											$$ = comms;
