@@ -5,10 +5,10 @@ forevis (suco_de_cevadiss) {
 	mundo_vai_girarzis preto_inteiris 10; // o cara pode mandar um valor para multiplicar
 	}
 
-	tombis_que_eu_levo vartemp; 			// o motor 3 = 255 - abaixa
-	quebra_um_gais; 				// o motor 5 = 255 - liga ima
-	negadis_hoje_e_sexta_feris vartemp;			// o motor 3 = 255 - levanta
-	pe_sem_cair vartempMaior;					// o motor 4 = 255 - sobe
+	tombis_que_eu_levo vartemp; 			// o motor 6 = 255 - abaixa
+	quebra_um_gais; 						// o motor 19 = 255 - liga ima
+	negadis_hoje_e_sexta_feris vartemp;			// o motor 7 = 255 - levanta
+	pe_sem_cair vartempMaior;					// o motor 9 = 255 - sobe
 
 	forevis(suco_de_cevadiss){ 		//espero o botao quando a figura esta no botao
 		mundo_vai_girarzis preto_inteiris 10;
@@ -17,8 +17,8 @@ forevis (suco_de_cevadiss) {
 
 	cacildis = preto_inteiris 0;
 	forevis (cacildis a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 3){
-	pra_la vartemp; 				//o motor 1 = 255 - direita
-	pra_ca vartemp;				//o motor 1 = 255 ?? esquerda
+	pra_la vartemp; 				//o motor 2 = 255 - direita
+	pra_ca vartemp;					//o motor 3 = 255 ?? esquerda
 	cacildis  = cacildis  soma_na_contis preto_inteiris 1;
 	}
 
