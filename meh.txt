@@ -12,21 +12,30 @@ forevis (suco_de_cevadiss) {
 	quebra_um_gais; 						// o motor 19 = 255 - liga ima
 	
 
-	vou_da_um_ripetequis vartemp;			// o motor 5 = levanta base
-	negadis_hoje_e_sexta_feris vartemp;			// o motor 7 = 255 - levanta
+	vou_da_um_ripetequis vartempMaior;			// o motor 5 = levanta base
+	negadis_hoje_e_sexta_feris vartempMaior;			// o motor 7 = 255 - levanta
 	pe_sem_cair vartempMaior;					// o motor 9 = 255 - sobe
 
 	forevis(suco_de_cevadiss){ 		//espero o botao quando a figura esta no botao
 		mundo_vai_girarzis preto_inteiris 10;
 	}
 	//discrevis "CACIlDIS";
-	converta_um_gais;
+	
 	cacildis = preto_inteiris 0;
-	forevis (cacildis a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 3){
+	contis_conta = preto_inteiris 0;
+
+	forevis (cacildis a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 0){
 	pra_la vartemp; 				//o motor 2 = 255 - direita
 	pra_ca vartemp;					//o motor 3 = 255 ?? esquerda
-	cacildis  = cacildis  soma_na_contis preto_inteiris 1;
-	}
 
-	//mais_meh;
+	contis_conta  = contis_conta  soma_na_contis preto_inteiris 1;
+
+		que_isso_rapa( contis_conta a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 3){
+		cacildis = preto_inteiris 1;
+		}
+
+
+	}
+	converta_um_gais;
+	mais_meh;
 		
