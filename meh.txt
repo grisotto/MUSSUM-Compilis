@@ -2,11 +2,17 @@ vartemp =  preto_inteiris 500;
 vartempMaior =  preto_inteiris 1000;
 
 forevis (suco_de_cevadiss) {  	
-	mundo_vai_girarzis preto_inteiris 10; // o cara pode mandar um valor para multiplicar
+	mundo_vai_girarzis preto_inteiris 10; 
 	}
 
+	san_beneditis vartemp;					// o motor 4 = abaixa base
 	tombis_que_eu_levo vartemp; 			// o motor 6 = 255 - abaixa
+	
+
 	quebra_um_gais; 						// o motor 19 = 255 - liga ima
+	
+
+	vou_da_um_ripetequis vartemp;			// o motor 5 = levanta base
 	negadis_hoje_e_sexta_feris vartemp;			// o motor 7 = 255 - levanta
 	pe_sem_cair vartempMaior;					// o motor 9 = 255 - sobe
 
@@ -14,7 +20,7 @@ forevis (suco_de_cevadiss) {
 		mundo_vai_girarzis preto_inteiris 10;
 	}
 	//discrevis "CACIlDIS";
-
+	converta_um_gais;
 	cacildis = preto_inteiris 0;
 	forevis (cacildis a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 3){
 	pra_la vartemp; 				//o motor 2 = 255 - direita

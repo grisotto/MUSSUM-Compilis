@@ -15,7 +15,7 @@ class Stmts;
 %token TOK_IF TOK_ELSE TOK_WHILE
 %token EQ_OP NE_OP LT_OP GT_OP LE_OP GE_OP TOK_AND TOK_OR
 %token TOK_STRING TOK_ABAIXA TOK_LEVANTA TOK_SOBE TOK_DIREITA TOK_ESQUERDA TOK_LIGA_IMA
-%token TOK_BOTAO TOK_MEH
+%token TOK_BOTAO TOK_MEH TOK_BASEDESCE TOK_BASESOBE TOK_DESLIGA_IMA
 
 %union {
 	char *port;
@@ -116,6 +116,31 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 
 											$$ = comms;
 	 									}
+
+	   | TOK_BASEDESCE	expr ';'					{
+
+		 								
+
+		 									BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);  
+		 									Stmts *comms = new Stmts(new OutPort("4", alto));
+											comms->append(new Delay(vara));
+											comms->append(new OutPort("7", zero));
+											comms->append(new Delay(delaymeio));
+
+											$$ = comms;
+		 								}
+	  | TOK_BASESOBE	 expr ';'					{
+	 										
+	 										BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);    
+		 									Stmts *comms = new Stmts(new OutPort("5", alto));
+											comms->append(new Delay(vara));
+											comms->append(new OutPort("9", zero));
+											comms->append(new Delay(delaymeio));
+
+											$$ = comms;
+	 									}
+
+
 	 | TOK_DIREITA expr	';'					{
 	 										
 	 										BinaryOp *vara = new  BinaryOp($2 , '+' , delaycompleto);    
@@ -148,6 +173,19 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 											$$ = comms;
 	 									}
 	 
+	 | TOK_DESLIGA_IMA	';' 				{
+	 										
+	 										  
+		 									Stmts *comms = new Stmts(new OutPort("19", zero));
+											comms->append(new Delay(delaymeio));
+											
+											
+
+											$$ = comms;
+	 									}
+	 
+
+
 
 condblock : TOK_IF '(' logicexpr ')' stmt %prec IFX				{ $$ = new If($3, $5, NULL); }
 		  | TOK_IF '(' logicexpr ')' stmt elseblock				{ $$ = new If($3, $5, $6); }

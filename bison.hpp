@@ -72,7 +72,10 @@ extern int yydebug;
     TOK_LIGA_IMA = 282,
     TOK_BOTAO = 283,
     TOK_MEH = 284,
-    IFX = 285
+    TOK_BASEDESCE = 285,
+    TOK_BASESOBE = 286,
+    TOK_DESLIGA_IMA = 287,
+    IFX = 288
   };
 #endif
 
@@ -91,7 +94,7 @@ union YYSTYPE
 	Node *node;
 	Stmts *stmt;
 
-#line 95 "bison.hpp" /* yacc.c:1909  */
+#line 98 "bison.hpp" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
