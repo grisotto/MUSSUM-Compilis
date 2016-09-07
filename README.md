@@ -59,7 +59,7 @@ https://grisotto.github.io/MUSSUM-Compilis/
 ## Ajuda
 
 
-[![Ajuda](http://i3.ytimg.com/vi/mOZxzxgxUx4/hqdefault.jpg)](https://youtu.be/mOZxzxgxUx4?t=15s "Ambulância preta")
+[![Ajuda](http://img.youtube.com/vi/mOZxzxgxUx4/mqdefault.jpg)](https://youtu.be/mOZxzxgxUx4?t=15s "Ambulância preta")
 
 
 
