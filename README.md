@@ -53,10 +53,13 @@ https://grisotto.github.io/MUSSUM-Compilis/
 [![Robcomp parte 2](http://i3.ytimg.com/vi/tcHpQz9_d8g/hqdefault.jpg)](https://www.youtube.com/watch?v=tcHpQz9_d8g&index=2&list=PLgDl66NdlckmEInm5MZruTB8ny3vGkXKH "Robcomp parte 2")
 
 
+
+
 <a name="Ajuda"></a>
 ## Ajuda
 
-[![Ajuda](http://i3.ytimg.com/vi/tcHpQz9_d8g/hqdefault.jpg)](https://youtu.be/mOZxzxgxUx4?t=15s "Ambulância preta")
+
+[![Ajuda](http://i3.ytimg.com/vi/mOZxzxgxUx4/hqdefault.jpg)](https://youtu.be/mOZxzxgxUx4?t=15s "Ambulância preta")
 
 
 
