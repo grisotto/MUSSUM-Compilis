@@ -9,16 +9,20 @@ void setupPosition() {
   digitalWrite(13, LOW);  delay(1000);
 
   const int ports[10] = {
-    3, 4, 5, 6, 7, 8, 9, 10};
-    
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 12};
+
   int port;
-  for(port = 0; port < 8; port++) {
+ 
+  for(port = 0; port < 10; port++)
+    pinMode(port, OUTPUT);
+   
+  for(port = 0; port < 10; port++) {
     
-    while (digitalRead(A0) == LOW) {
+    while (digitalRead(A2) == LOW) {
       digitalWrite(ports[port], HIGH);
-      delay(100);
+      delay(50);
       digitalWrite(ports[port], LOW);
-      delay(100);
+      delay(50);
     }
     digitalWrite(ports[port], LOW);
 
@@ -47,9 +51,10 @@ void piscaJob() {
 }
 
 void ovo_de_pascoa() {
-  delay(10);
-  
-  if (digitalRead(A2) == HIGH) {
+  pinMode(13, OUTPUT);
+
+  while(true) {
+    if (digitalRead(A2) == HIGH) {
       delay(500);
       int ativ_liga = 1;
       int ativ_setup = (digitalRead(A2) == HIGH);
@@ -66,6 +71,8 @@ void ovo_de_pascoa() {
       }
         
       return;
+    }
+    delay(10);
   }
 }
 

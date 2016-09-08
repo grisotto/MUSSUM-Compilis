@@ -3,8 +3,8 @@
 #avr-ld $1.o -o $1
 
 #llc-mp-3.9 -march=avr -mcpu=avrxmega3 $1.ll -o $1.s -filetype=asm
-llc -march=avr -mcpu=avrxmega3 $1.ll -o $1.s -filetype=asm
-avr-gcc -mmcu=atmega328  $1.s ../arduinowire/*.o -o $1
+llc -march=avr -mcpu=avrxmega3 $1.ll -o $1.o -filetype=obj
+avr-gcc -mmcu=atmega328  $1.o ../arduinowire/*.o -o $1
 
 #llc-mp-3.9 $1.ll -o $1.s -filetype=asm
 
