@@ -1,0 +1,50 @@
+vardescendo =  preto_inteiris -150;
+vartempMaior =  preto_inteiris 1000;
+
+forevis (suco_de_cevadiss) {  	
+	mundo_vai_girarzis preto_inteiris 10; 
+	}
+
+	san_beneditis vardescendo;					// o motor 4 = abaixa base
+	tombis_que_eu_levo vardescendo; 			// o motor 6 = 255 - abaixa
+	
+
+	quebra_um_gais; 						// o motor 19 = 255 - liga ima
+	
+
+	vou_da_um_ripetequis vartempMaior;			// o motor 5 = levanta base
+	negadis_hoje_e_sexta_feris vartempMaior;			// o motor 7 = 255 - levanta
+	pe_sem_cair vartempMaior;					// o motor 9 = 255 - sobe
+
+	forevis(suco_de_cevadiss){ 					//espero o botao quando a figura esta no botao
+		mundo_vai_girarzis preto_inteiris 10;
+	}
+	//discrevis "CACIlDIS";
+	
+	cacildis = preto_inteiris 0;
+	contis_conta = preto_inteiris 0;
+
+	forevis (cacildis a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 0){
+
+		pra_la vartempMaior; 				//o motor 2 = 255 - direita
+		pra_ca vartempMaior;					//o motor 3 = 255 ?? esquerda
+
+		contis_conta  = contis_conta  soma_na_contis preto_inteiris 1;
+
+		que_isso_rapa( contis_conta a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 3){
+		cacildis = preto_inteiris 1;
+		}
+
+
+	}
+
+	 quebra_um_gais; 
+	 
+	// nesta parte ele pede mais meh
+	birita = preto_inteiris 0;
+	forevis(birita sarava preto_inteiris 3){
+
+		mais_meh;
+		birita  = birita  soma_na_contis preto_inteiris 1;
+	}
+		
