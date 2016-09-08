@@ -1,12 +1,12 @@
-vartemp =  preto_inteiris 500;
+vardescendo =  preto_inteiris -150;
 vartempMaior =  preto_inteiris 1000;
 
 forevis (suco_de_cevadiss) {  	
 	mundo_vai_girarzis preto_inteiris 10; 
 	}
 
-	san_beneditis vartemp;					// o motor 4 = abaixa base
-	tombis_que_eu_levo vartemp; 			// o motor 6 = 255 - abaixa
+	san_beneditis vardescendo;					// o motor 4 = abaixa base
+	tombis_que_eu_levo vardescendo; 			// o motor 6 = 255 - abaixa
 	
 
 	quebra_um_gais; 						// o motor 19 = 255 - liga ima
@@ -25,10 +25,11 @@ forevis (suco_de_cevadiss) {
 	contis_conta = preto_inteiris 0;
 
 	forevis (cacildis a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 0){
-	pra_la vartemp; 				//o motor 2 = 255 - direita
-	pra_ca vartemp;					//o motor 3 = 255 ?? esquerda
 
-	contis_conta  = contis_conta  soma_na_contis preto_inteiris 1;
+		pra_la vartempMaior; 				//o motor 2 = 255 - direita
+		pra_ca vartempMaior;					//o motor 3 = 255 ?? esquerda
+
+		contis_conta  = contis_conta  soma_na_contis preto_inteiris 1;
 
 		que_isso_rapa( contis_conta a_ordem_dos_tratores_nao_altera_o_pao_duris preto_inteiris 3){
 		cacildis = preto_inteiris 1;
@@ -36,6 +37,14 @@ forevis (suco_de_cevadiss) {
 
 
 	}
-	converta_um_gais;
-	mais_meh;
+
+	 quebra_um_gais; 
+	 
+	// nesta parte ele pede mais meh
+	birita = preto_inteiris 0;
+	forevis(birita sarava preto_inteiris 3){
+
+		mais_meh;
+		birita  = birita  soma_na_contis preto_inteiris 1;
+	}
 		

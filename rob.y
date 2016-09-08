@@ -2,7 +2,7 @@
 #include "node.h"
 
 Int16 *delaycompleto = new Int16(1000);
-Int16 *delaymeio = new Int16(500);
+Int16 *delaymeio = new Int16(200);
 Int16 *zero = new Int16(0);
 
 Int16 *alto = new Int16(255);
@@ -15,7 +15,7 @@ class Stmts;
 %token TOK_IF TOK_ELSE TOK_WHILE
 %token EQ_OP NE_OP LT_OP GT_OP LE_OP GE_OP TOK_AND TOK_OR
 %token TOK_STRING TOK_ABAIXA TOK_LEVANTA TOK_SOBE TOK_DIREITA TOK_ESQUERDA TOK_LIGA_IMA
-%token TOK_BOTAO TOK_MEH TOK_BASEDESCE TOK_BASESOBE TOK_DESLIGA_IMA
+%token TOK_BOTAO TOK_MEH TOK_BASEDESCE TOK_BASESOBE 
 
 %union {
 	char *port;
@@ -65,14 +65,14 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 											comms->append(new OutPort("12", zero));
 											comms->append(new OutPort("11", alto));
 											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("12", zero));
-
-											comms->append(new OutPort("11", alto));
-											comms->append(new Delay(delaycompleto));
 											comms->append(new OutPort("11", zero));
-											comms->append(new OutPort("12", alto));
-											comms->append(new Delay(delaycompleto));
-											comms->append(new OutPort("12", zero));
+
+						//					comms->append(new OutPort("11", alto));
+						//					comms->append(new Delay(delaycompleto));
+						//					comms->append(new OutPort("11", zero));
+						//					comms->append(new OutPort("12", alto));
+						//					comms->append(new Delay(delaycompleto));
+						//					comms->append(new OutPort("12", zero));
 
 
 											$$ = comms;
@@ -164,27 +164,20 @@ stmt : TOK_OUT '=' expr ';'				{ $$ = new OutPort($1, $3); }
 
 	 | TOK_LIGA_IMA	';' 				{
 	 										
-	 										  
-		 									Stmts *comms = new Stmts(new OutPort("19", alto));
-											comms->append(new Delay(delaymeio));
-											
-											
 
-											$$ = comms;
-	 									}
-	 
-	 | TOK_DESLIGA_IMA	';' 				{
+
+	 										CmpOp* apertou = new CmpOp(new InPort("19"), EQ_OP, new Int16(0));
+
 	 										
-	 										  
-		 									Stmts *comms = new Stmts(new OutPort("19", zero));
-											comms->append(new Delay(delaymeio));
+		 									Stmts *comms = new Stmts(new If(apertou, new OutPort("19", alto), new OutPort("19", zero)));
+		 									comms->append(new Delay(delaymeio));
 											
 											
 
 											$$ = comms;
 	 									}
 	 
-
+	
 
 
 condblock : TOK_IF '(' logicexpr ')' stmt %prec IFX				{ $$ = new If($3, $5, NULL); }

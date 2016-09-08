@@ -46,7 +46,6 @@ extern void unescape(char *s);
 "suco_de_cevadiss"					{ return(TOK_BOTAO);}
 "tombis_que_eu_levo"				{ return(TOK_ABAIXA); }
 "quebra_um_gais"					{ return(TOK_LIGA_IMA); }
-"converta_um_gais"					{ return(TOK_DESLIGA_IMA); }
 "negadis_hoje_e_sexta_feris"		{ return(TOK_LEVANTA); }
 "pe_sem_cair"				   		 { return(TOK_SOBE); }
 "pra_la"							{ return(TOK_DIREITA); }
